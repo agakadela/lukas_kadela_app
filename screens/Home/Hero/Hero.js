@@ -7,16 +7,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Link as AnchorLink } from 'react-scroll';
 
-const stats = [
-  {
-    title: '+84',
-    text: 'Clients worldwide',
-  },
-  {
-    title: '120',
-    text: 'Projects done',
-  },
-];
+// const stats = [
+//   {
+//     title: '+84',
+//     text: 'Clients worldwide',
+//   },
+//   {
+//     title: '120',
+//     text: 'Projects done',
+//   },
+// ];
 
 const Hero = () => {
   return (
@@ -60,13 +60,13 @@ const Hero = () => {
             </AnchorLink>
           </div>
 
-          <div className={styles.stats_wrapper}>
+          {/* <div className={styles.stats_wrapper}>
             {stats.map((item, index) => (
               <motion.div variants={item} key={item.title + index}>
                 <Stats variants={item} key={index} {...item} />
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </motion.div>
 
         <div className={styles.image_container}>
@@ -74,13 +74,9 @@ const Hero = () => {
             className={styles.image}
             src='/images/avatar.png'
             layout='fill'
-            placeholder='blur'
-            blurDataURL='/images/avatar.png'
+            objectFit='cover'
+            alt='Lukas Kadela hero photo'
           />
-
-          <div className={styles.author}>
-            <p className={cn('caption', styles.name)}>Ph. D. Lukas Kadela</p>
-          </div>
           <div className={styles.overlay} />
         </div>
       </div>
