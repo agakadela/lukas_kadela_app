@@ -56,7 +56,13 @@ const Header = () => {
           <a className={cn('body-bold logo', styles.logo)}>
             <img
               className={styles.image}
-              src={navbar ? '/images/logo.svg' : '/images/logo_white.svg'}
+              src={
+                router.pathname == '/'
+                  ? navbar
+                    ? '/images/logo.svg'
+                    : '/images/logo_white.svg'
+                  : '/images/logo.svg'
+              }
             />
           </a>
         </Link>
