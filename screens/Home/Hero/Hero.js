@@ -1,6 +1,6 @@
 import styles from './hero.module.css';
 import cn from 'classnames';
-import Stats from './Stats';
+// import Stats from './Stats';
 import { motion } from 'framer-motion';
 import { variants, item } from '../../../variants/animation';
 import Image from 'next/image';
