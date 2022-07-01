@@ -55,7 +55,7 @@ const Hero = () => {
 
         <div className={styles.wrapper}>
           <div className={styles.image_container}>
-            <img className={styles.image} src='/images/avatar.png' />
+            <img className={styles.image} src='/images/about-img.png' />
           </div>
           <div className={styles.bottom_content}>
             <span className={cn('hairline-small', styles.text)}>FEATURES</span>

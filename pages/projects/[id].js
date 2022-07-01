@@ -29,7 +29,7 @@ const projects = [
 ];
 
 export async function getStaticPaths() {
-  const paths = getAllIds('news');
+  const paths = getAllDataIds('projects');
 
   return {
     paths,
@@ -38,18 +38,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const newData = await getNewData(params.id, 'news');
-  const allNewsData = getSortedData('news');
+  const newData = await getNewData(params.id, 'projects');
+  const allProjectsData = getSortedData('projects');
 
   return {
     props: {
       newData,
-      allNewsData,
+      allProjectsData,
     },
   };
 }
 
-const New = ({ newData, allNewsData }) => {
+const New = ({ newData, allProjectsData }) => {
+  console.log(allProjectsData);
   return (
     <Layout>
       <Head>
@@ -113,43 +114,6 @@ const New = ({ newData, allNewsData }) => {
               className={cn('caption', styles.contentHtml)}
               dangerouslySetInnerHTML={{ __html: newData.contentHtml }}
             />
-          </div>
-
-          <div className={styles.side_content}>
-            <h1 className={cn('body-bold')}>Recent Projects</h1>
-            <div className={styles.grid}>
-              {projects.map((item, index) => (
-                <Link href={item.link} key={index}>
-                  <a>
-                    <div className={styles.grid_image_container}>
-                      <img className={styles.grid_image} src={item.image} />
-                    </div>
-                  </a>
-                </Link>
-              ))}
-            </div>
-            <h1 className={cn('body-bold')}>Recent News</h1>
-            <div className={styles.news_grid}>
-              {allNewsData.map(({ id, image, tag, title }) => (
-                <ScrollAnimation key={id}>
-                  <Link href={`/news/${id}`}>
-                    <a>
-                      <div className={styles.news_item}>
-                        <div className={styles.news_image_container}>
-                          <img src={image} />
-                        </div>
-                        <div className={styles.news_content}>
-                          <h4 className={cn('body-2-bold', styles.news_title)}>
-                            {title}
-                          </h4>
-                          <p className={cn('caption')}>{tag}</p>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                </ScrollAnimation>
-              ))}
-            </div>
           </div>
         </div>
       </div>

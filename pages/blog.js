@@ -1,10 +1,10 @@
-import Layout from "../components/Layout";
-import { Hero } from "../screens/Blog";
+import Layout from '../components/Layout';
+import { Hero } from '../screens/Blog';
 
-import { getSortedNewsData } from "../lib/news";
+import { getSortedData } from '../lib/data';
 
 export async function getStaticProps() {
-  const allNewsData = getSortedNewsData();
+  const allNewsData = getSortedData('news');
 
   return {
     props: {

@@ -1,23 +1,22 @@
-import cn from "classnames";
-import ScrollAnimation from "../ScrollAnimation";
-import Service from "../Service";
-import Tag from "../Tag";
-import TextOverlap from "../TextOverlap";
-import Item from "./Item";
-import styles from "./news.module.css";
-import Link from "next/link";
+import cn from 'classnames';
+import ScrollAnimation from '../ScrollAnimation';
+import Tag from '../Tag';
+import TextOverlap from '../TextOverlap';
+import Item from './Item';
+import styles from './news.module.css';
+import Link from 'next/link';
 
 const News = ({ allNewsData, number }) => {
   return (
-    <div className={cn("section", styles.section)}>
-      <div className={cn("container")}>
+    <div className={cn('section', styles.section)}>
+      <div className={cn('container')}>
         <div className={styles.upper_content}>
           <div className={styles.content}>
-            <Tag number={number} background="#b5e4ca" />
-            <TextOverlap title="News" text="News" />
+            <Tag number={number} background='#b5e4ca' />
+            <TextOverlap title='News' text='News' />
           </div>
-          <Link href="/blog">
-            <a className={cn("button-small", styles.button)}>View News</a>
+          <Link href='/blog'>
+            <a className={cn('button-small', styles.button)}>View News</a>
           </Link>
         </div>
 

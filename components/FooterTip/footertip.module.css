@@ -3,6 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid var(--n6);
+}
+
+.logo {
+  width: 180px;
 }
 
 .author {

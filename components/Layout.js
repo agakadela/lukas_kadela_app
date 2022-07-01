@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Author from './Author';
-import Footer from './Footer/Footer';
 import FooterTip from './FooterTip';
 import Header from './Header';
 
@@ -14,9 +12,7 @@ const Layout = ({ children }) => {
       </Head>
       <Header />
       {children}
-      <Footer />
       <FooterTip />
-      <Author />
     </>
   );
 };
