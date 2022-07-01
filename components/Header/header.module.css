@@ -54,6 +54,13 @@
   display: none;
 }
 
+.logo {
+  width: 150px;
+}
+.logo img {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .section {
     position: fixed;
@@ -66,10 +73,6 @@
 
   .link {
     display: none;
-  }
-
-  .active_logo {
-    color: var(--n2);
   }
 
   .links {

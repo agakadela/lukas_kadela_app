@@ -1,59 +1,59 @@
-import styles from "./hero.module.css";
-import cn from "classnames";
-import Stats from "./Stats";
-import { motion } from "framer-motion";
-import { variants, item } from "../../../variants/animation";
-import Image from "next/image";
-import Link from "next/link";
-import { Link as AnchorLink } from "react-scroll";
+import styles from './hero.module.css';
+import cn from 'classnames';
+import Stats from './Stats';
+import { motion } from 'framer-motion';
+import { variants, item } from '../../../variants/animation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Link as AnchorLink } from 'react-scroll';
 
 const stats = [
   {
-    title: "+84",
-    text: "Clients worldwide",
+    title: '+84',
+    text: 'Clients worldwide',
   },
   {
-    title: "120",
-    text: "Projects done",
+    title: '120',
+    text: 'Projects done',
   },
 ];
 
 const Hero = () => {
   return (
-    <div className={cn("section", styles.section)}>
-      <div className={cn("container", styles.container)}>
+    <div className={cn('section', styles.section)}>
+      <div className={cn('container', styles.container)}>
         <motion.div
-          initial="hidden"
-          animate="show"
+          initial='hidden'
+          animate='show'
           variants={variants}
           className={styles.content}
         >
-          <motion.span variants={item} className={cn("hairline", styles.span)}>
-            DESIGN + CODE
+          <motion.span variants={item} className={cn('hairline', styles.span)}>
+            Ph. D.
           </motion.span>
-          <motion.h1 variants={item} className={cn("hero", styles.title)}>
-            {"I’m Angel Uriostegui"}
+          <motion.h1 variants={item} className={cn('hero', styles.title)}>
+            {'LUKAS KADELA'}
           </motion.h1>
-          <motion.p variants={item} className={cn("body", styles.subtitle)}>
-            Designing user interfaces for over{" "}
-            <span className={cn("body-bold", styles.text)}>2 years</span> as a
-            frontend developer
+          <motion.p variants={item} className={cn('body', styles.subtitle)}>
+            Ph. D. Historic preservation specjalist with{' '}
+            <span className={cn('body-bold', styles.text)}>15 years</span> of
+            experience in field
           </motion.p>
           <div className={styles.wrapper}>
-            <Link href="/contact">
+            <Link href='/contact'>
               <a>
                 <motion.button
                   variants={item}
-                  className={cn("button", styles.button)}
+                  className={cn('button', styles.button)}
                 >
-                  Hire Me
+                  Let&apos;s talk
                 </motion.button>
               </a>
             </Link>
-            <AnchorLink to="projects" offset={-128} smooth={true}>
+            <AnchorLink to='projects' offset={-128} smooth={true}>
               <motion.button
                 variants={item}
-                className={cn("button button-stroke", styles.button)}
+                className={cn('button button-stroke', styles.button)}
               >
                 Projects
               </motion.button>
@@ -62,7 +62,7 @@ const Hero = () => {
 
           <div className={styles.stats_wrapper}>
             {stats.map((item, index) => (
-              <motion.div variants={item}>
+              <motion.div variants={item} key={item.title + index}>
                 <Stats variants={item} key={index} {...item} />
               </motion.div>
             ))}
@@ -72,14 +72,14 @@ const Hero = () => {
         <div className={styles.image_container}>
           <Image
             className={styles.image}
-            src="/images/avatar.jpg"
-            layout="fill"
-            placeholder="blur"
-            blurDataURL="/images/avatar.jpg"
+            src='/images/avatar.png'
+            layout='fill'
+            placeholder='blur'
+            blurDataURL='/images/avatar.png'
           />
 
           <div className={styles.author}>
-            <p className={cn("caption", styles.name)}>Angel Uriostegui</p>
+            <p className={cn('caption', styles.name)}>Ph. D. Lukas Kadela</p>
           </div>
           <div className={styles.overlay} />
         </div>
