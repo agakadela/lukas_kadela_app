@@ -29,7 +29,7 @@ const projects = [
 ];
 
 export async function getStaticPaths() {
-  const paths = getAllIds('news');
+  const paths = getAllDataIds('news');
 
   return {
     paths,
